@@ -6,3 +6,11 @@ containerStyle?: string;
 handleClick?: MouseEventHandler<HTMLButtonElement>; 
 btnType?: 'button' | 'submit';
 }
+
+export interface SearchManufacturerProps {
+    manufacturer: string;
+    setManufacturer: (manufaturer: string) => void;
+    
+
+
+}
