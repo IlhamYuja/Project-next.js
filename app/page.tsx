@@ -25,19 +25,19 @@ export default async function Home({ searchParams }) {
           <SearchBar/>
 
           <div  className='home__filter-container'>
-              {/* <CustomFilter title='fuel'/>
-              <CustomFilter title='year'/> */}
+              <CustomFilter title='fuel'/>
+              <CustomFilter title='year'/>
             
           </div>
         </div>
         {!isDataEmpety ? (
           <section>
-            <div className='home___cars-wrapper'>
+            <div className='home__cars-wrapper'>
                 {allCars?.map((car) => (<CardCar car={car}/>))}
             </div>
           </section>
         ): (
-          <div className='home___error-container'>
+          <div className='home__error-container'>
             <h2 className='text-black text-xl font-bold'>
               No Result
             </h2>
