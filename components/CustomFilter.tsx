@@ -22,7 +22,7 @@ const CustomFilter = ({title, options, setFilter} : CustomFilterProps  ) => {
         <div className='relative w-fit z-10'>
           <Listbox.Button className='custom-filter__btn'>
             <span className='block truncate'>{selected.title}</span>
-            <Image src='/chevron-up-down.svg' width={20} height={20} className='ml-4 object-contain' alt={''} />
+            <Image src='/chevron-up-down.svg' width={20} height={20} className='ml-4 object-contain' alt='up & down' />
           </Listbox.Button>
           <Transition
           as={Fragment}
@@ -30,7 +30,7 @@ const CustomFilter = ({title, options, setFilter} : CustomFilterProps  ) => {
           leaveFrom='opacity-100'
           leaveTo='opacity-0'
           >
-            <Listbox.Options className='custom-filter__option'>
+            <Listbox.Options className='custom-filter__options'>
               {options.map((option) => (
                 <Listbox.Option
                 key={option.title}

@@ -26,17 +26,17 @@ export default function Home() {
 
    try {
     const result = await fetchCars({
-      manufacturer: manufacturer || '',
+      manufacturer: manufacturer.toLowerCase() || '',
       year: year || 2022,
-      fuel: fuel || '',
+      fuel: fuel.toLowerCase() || '',
       limit: limit || 10,
-      model: model || '',
+      model: model.toLowerCase() || '',
     });
     
     setallCars(result);
 
    } catch {
-    console.log(error);
+    console.error();
    } finally {
     setloading(false);
    }
@@ -75,13 +75,13 @@ export default function Home() {
         {allCars.length > 0 ? (
           <section>
             <div className='home__cars-wrapper'>
-                {allCars?.map((car) => (<CardCar car={car}/>))}
+                {allCars?.map((car, index) => (<CardCar key={`car-${index}`} car={car}/>))}
             </div>
 
             {loading && (
               <div className='mt-16 w-full flex-center'>
                 <Image
-                 src='/loader.svg'
+                 src='./loader.svg'
                  alt='loader'
                  width={50}
                  height={50}

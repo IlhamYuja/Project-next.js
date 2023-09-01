@@ -22,18 +22,20 @@ const SearchManufacturer = ({selected, setSelected}: SearchManufacturerProps) =>
                 </Combobox.Button>
 
                 <Combobox.Input 
-                    className='search-manufacturer__input'
+                    className='search-manufacturer__input'  
                     placeholder='Search Car'
-                    displayValue={(manufacturer: string) => manufacturer}
+                    displayValue={(item: string) => item}
                     onChange={(e) => setQuery(e.target.value)}
-                />
+                />  
                 <Transition 
                 as={Fragment}
                 leave='transition ease-in duration-100'
                 leaveFrom='opacity-100'
                 leaveTo='opacity-0'
                 afterLeave={() => setQuery('')}>
-                    <Combobox.Options>
+                    
+                    <Combobox.Options className='search-manufacturer__options' static>
+
                         {filterManufacturers.map((item) =>
                                 <Combobox.Option
                                 key={item}
